@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getx_app/common-widget/round_icon_button.dart';
+import 'package:getx_app/pages/commandeDetails/commandeDetails_page.dart';
 import 'package:getx_app/utilities/constants.dart';
-
+import 'package:get/get.dart';
 class CommandeCard extends StatelessWidget {
   final Color color;
   final String name;
-  final String description;
-  final double rating;
-  final int comments;
+  final String date;
   final ImageProvider<dynamic> image;
 
   const CommandeCard({
     this.color,
     this.name,
-    this.description,
-    this.rating,
-    this.comments,
+    this.date,
     this.image,
   });
 
@@ -49,42 +46,39 @@ class CommandeCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
+                InkWell(
+                  onTap: () {
+                    Get.to(CommandeDetailsPage());
+                  },
+                  child: Text(
                     name,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    description,
-                    style: kSmallDescStyle,
-                  ),
+                ),
+
                   SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       FaIcon(
-                        FontAwesomeIcons.star,
+                        FontAwesomeIcons.calendarCheck,
                         color: kSmallDescColor,
                         size: 15,
                       ),
                       SizedBox(
                         width: 2,
                       ),
-                      Text(rating.toString(), style: kSmallDescStyle),
+                      Text(date.toString(), style: kSmallDescStyle),
                       SizedBox(
                         width: 10,
                       ),
-                      Icon(
-                        Icons.comment,
-                        color: kSmallDescColor,
-                        size: 15,
-                      ),
                       SizedBox(
                         width: 2,
                       ),
-                      Text(comments.toString(), style: kSmallDescStyle)
                     ],
                   ),
                 ],
@@ -104,23 +98,6 @@ class CommandeCard extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      height: 50,
-                      width: 100,
-                      child: RaisedButton(
-                        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                        color: Colors.white,
-                        shape: kShape,
-                        onPressed: () {},
-                        child: const Text(
-                          'Commandez',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),

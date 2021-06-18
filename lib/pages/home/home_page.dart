@@ -13,15 +13,7 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-/*      appBar: AppBar(
-        title: Text(
-          controller.title,
-          style: TextStyle(color: Colors.black),
-        ),
-        elevation: 0.0,
-        bottomOpacity: 0.0,
-        backgroundColor: Colors.transparent,
-      ),*/
+      extendBodyBehindAppBar: true,
       body: Stack(
         children: <Widget>[
           CustomBackground(),
@@ -40,19 +32,6 @@ class HomePage extends GetView<HomeController> {
                   width: 10,
                 )
               ],
-              title: Row(
-                children: <Widget>[
-                  /*Icon(
-                    Icons.location_on,
-                    color: Colors.black,
-                  ),
-                  *//*Text(
-                    '16 Ème Étage - Plateau',
-                    style: TextStyle(color: Colors.black),
-                  ),*/
-
-                ],
-              ),
             ),
             body:
             SafeArea(

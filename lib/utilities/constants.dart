@@ -9,7 +9,7 @@ const kPrimaryBlue =  Color(0xff1346A1);
 
 const kSmallDescColor = Color(0xff50436e);
 
-const kSmallDescStyle = TextStyle(fontSize: 12, color: kSmallDescColor);
+const kSmallDescStyle = TextStyle(fontSize: 14, color: kSmallDescColor);
 
 final kShape =
 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0));
